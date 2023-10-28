@@ -1,0 +1,27 @@
+Navigate to the configuration location of the redis-server. 
+
+The configuration file is typically located in the Redis configuration directory, which is usually /etc/redis/redis.conf on most Linux distributions.
+
+The command to give the user a permission the ability to read and write the file - sudo chmod 600 redis.conf 
+
+We have to Set a password using the "requirepass" directive in "redis.conf".
+
+Open the file with a text editor - nano redis.conf
+
+Go to the security module where you'll find the requirepass directive commented out, It's almost beneath the page
+
+Example of what to find - #requirepass foobared. Remove the # change the footbared to your preferable password and save the the file.
+
+Restart the server - sudo systemctl restart redis-server
+
+Connect to the redis server - redis-cli
+
+Authentication with the password - AUTH <your_password>
+
+You should see "OK."
+
+exit the redis-server - exit
+
+To get your flag, Use this command - get_flags
+
+Viola.
