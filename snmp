@@ -1,0 +1,13 @@
+Navigate to the location of the snmp configuration with this command - cd /etc/snmp/
+
+Open the snmpd configuration with any text editor of your choice. - sudo nano snmpd.conf
+
+Navigate to the agentaddress line and input your assigned server ip
+
+Navigate to the line "# Read-only access to everyone to the systemonly view"
+
+Edit the two rocommunity lines from public to any username of your choice
+
+Save and restart snmpd - service snmpd restart 
+
+use get-flags to get your flag.
