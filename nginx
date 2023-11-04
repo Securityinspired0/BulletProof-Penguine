@@ -1,0 +1,20 @@
+Open terminal and run the following command to view which user NGINX is using presently, In this cause should be root.
+
+Command to use - sudo ps aux | grep nginx
+
+Below is similar to what you'd see. 
+
+root         744  0.0  0.1  51216  1448 ?        Ss   13:11   0:00 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+root         748  0.0  0.3  51780  3136 ?        S    13:11   0:00 nginx: worker process
+root         749  0.0  0.3  51780  3136 ?        S    13:11   0:00 nginx: worker process
+thm         1424  0.0  0.0   8168   656 pts/0    R+   13:14   0:00 grep --color=auto nginx
+
+To edit the NGIX configuration file - sudo nano /etc/nginx/nginx.conf
+
+Edit the user from root to www-data 
+
+save and exit
+
+restart the nginx server to apply changes - sudo systmctl restart nginx
+
+your flags should be available.
