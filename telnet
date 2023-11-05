@@ -1,0 +1,12 @@
+We are required to 
+Take down the telnet service.
+Take down the service in port 69/udp.
+
+
+To get the cleartext service running on port 69/udp - sudo nmap -sU -p 69 "server-ip"
+
+It’s worth mentioning that on Ubuntu/Debian machines, inetd is the service that listens on all ports used by Internet services such as FTP, POP3, and telnet. And, it starts automatically at boot.
+
+All we need to do is to stop the service from running and the flag will be available.  - sudo systemctl stop inetd
+
+Once that is done, flag will be available. 
