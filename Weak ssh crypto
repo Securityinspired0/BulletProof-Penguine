@@ -1,0 +1,13 @@
+Given the reported vulnerabilites for each algorithm, the solution would be to remove the weaknesses from sshd_config
+
+Navigate to the configuration file of ssh - cd /etc/ssh
+
+Open the configuration file for editing with elevated privilage - sudo nano sshd_config
+
+Go to the line beneath the page that needs changing
+
+For the ssh_weak_macs flag - delete the weak algorithm hmac-md5-96
+
+For the ssh_weak_kex - delete diffie-hellman-group1-sha1 
+
+For ssh_weak_ciphers - delete 3des-cbc, aes128-cbc, aes256-cbc
